@@ -16,3 +16,11 @@ GRID = [
 ]
 
 # Решение будет здесь
+for j in range(1, 4):
+    GRID[0][j] += GRID[0][j-1]
+for i in range(1, 4):
+    GRID[i][0] += GRID[i-1][0]
+for i in range(1, 4):
+    for j in range (1, 4):
+        GRID[i][j] += min(GRID[i][j-1], GRID[i-1][j])
+print(GRID[i][j])
